@@ -65,7 +65,7 @@ void print_python_bytes(PyObject *p)
 	if (((PyVarObject *)p)->ob_size >= 10)
 		size = 10;
 	else
-	size = ((PyVarObject *)p)->ob_size + 1;
+		size = ((PyVarObject *)p)->ob_size + 1;
 
 	printf(" first %ld bytes: ", size);
 	for (i = 0; i < size; i++)
@@ -97,7 +97,7 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	buffer = PyOs_double_to_string(float_obj->ob_fval, 'r', 0,
+	buffer = PyOS_double_to_string(float_obj->ob_fval, 'r', 0,
 			Py_DTSF_ADD_DOT_0, NULL);
 	printf(" value: %s\n", buffer);
 	PyMem_Free(buffer);
